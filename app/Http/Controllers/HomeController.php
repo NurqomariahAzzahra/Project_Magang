@@ -1,18 +1,5 @@
 <?php
-/**
- * Codekop Toko Online
- * 
- * @link       https://www.codekop.com/
- * @version    1.0.1
- * @copyright  (c) 2021 
- * 
- * File      : HomeController.php
- * Web Name  : Toko Online
- * Developer : Fauzan Falah 
- * E-mail    : fauzancodekop@gmail.com / fauzan1892@codekop.com
- * 
- * 
-**/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -34,7 +21,7 @@ class HomeController extends Controller
         $produkdb = Produk::leftJoin('kategori','produk.id_kategori','=','kategori.id')
                     ->select('kategori.nama_kategori','produk.*');
         $data = [
-            'title'     => 'Toko Codekop',
+            'title'     => 'Bangli Food',
             'kategori'  => Kategori::All(),
             'produk'    => $produkdb->latest()->paginate(8),
         ];

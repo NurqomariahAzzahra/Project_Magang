@@ -3,7 +3,7 @@
 <!-- promosi -->
 {{-- <div class="promosi pt-3 pb-3">
     <div class="container text-center blink_me">
-        HIJUB GREAT DEALS 12.12, Get Extra Disc. Rp120.000,- Min. Purchase Rp200.000,-. Kode GS-120
+       
     </div>
 </div> --}}
 <!-- end promosi -->
@@ -38,20 +38,6 @@
                 <h4 class="mb-4"><b>Popular</b></h4>
                 @include('components.frontend.produk_list')
             </div>
-            <!-- end product -->
-            <!-- <div class="official mt-3">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div class="official-content">
-                            <h4><b>Offline Stores</b></h4>
-                            <p>Saat ini kami memiliki 2 toko yang tersebar di seluruh jabodetabek dan akan terus berkembang</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <img src="{{ asset('assets/img/offline_store.jpeg') }}" class="img-fluid w-100">
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>

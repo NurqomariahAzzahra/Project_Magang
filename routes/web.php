@@ -44,3 +44,13 @@ Route::group(['middleware' => 'revalidate'], function() {
         Route::post('update', [App\Http\Controllers\AdminController::class, 'update_profil'])->name('admin.update_profil');
     });
 });
+
+
+//kjkjajs
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+Route::get('/wilayah', function () {
+    return view('components.frontend.wilayah');
+});

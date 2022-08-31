@@ -43,7 +43,7 @@
                             @forelse($produk as $r)
                             <tr>
                                 <td>{{$no}}</td>
-                                <td><img src="{{url_images('gambar', $r->gambar)}}" class="img-fluid" style="width:80px;"></td>      
+                                <td><img src="{{url_images('gambar', $r->gambar)}}" class="img-fluid w-80 h-80" style="width:80px;"></td>      
                                 <td>{{$r->nama_kategori}}</td>      
                                 <td>{{$r->nama_produk}}</td>    
                                 <td>Rp{{number_format($r->harga_jual)}},-</td>      
