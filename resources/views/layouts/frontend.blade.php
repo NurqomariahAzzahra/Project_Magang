@@ -49,9 +49,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ url('/') }}"><b>Home</b></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('/wilayah') }}"><b>Categori wilayah</b></a>
-                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href=""><b>Categori wilayah</b></a>
+                    </li> -->
                     @foreach($kategori as $r)
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ url('kategori/'.$r->id) }}">
@@ -88,15 +88,18 @@
     </div>
     <!-- end main -->
     <!-- footer -->
+    <!-- footer -->
     <div class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <h4>Butuh Bantuan</h4>
-                    <p class="pt-2">08:00 - 17:00 WIB / (Senin - Jumat)</p>
-                    <i class="fas fa-envelope-square me-2"></i> {{ $profil->email }}
+                    <h4>Kontak Kami</h4>
+                    <!-- <p class="pt-2">08:00 - 17:00 WIB / (Senin - Jumat)</p> -->
+                    <i class="fas fa-envelope-square me-2"></i> diskominfosan@banglikab.go.id
                     <br>
-                    <i class="fas fa-map-marker-alt me-2"></i> {{ $profil->address }}
+                    <i class="fas fa-phone-square me-2"></i> (0366) 93804
+                    <br>
+                    <i class="fas fa-map-marker-alt me-2"></i> Jalan Brigjen Ngurah Rai No. 30
                     <br><br>
                 </div>
                 <div class="col-sm-4">

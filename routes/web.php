@@ -54,3 +54,5 @@ Route::get('/welcome', function () {
 Route::get('/wilayah', function () {
     return view('components.frontend.wilayah');
 });
+
+//Route::get('/', [Controllers\WilayahController::class, 'index'])->name('home.index');

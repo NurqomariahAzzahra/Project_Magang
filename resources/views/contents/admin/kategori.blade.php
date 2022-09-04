@@ -36,9 +36,19 @@
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                                 @endif
-
-              
                             </div>
+
+                            <!-- Foto -->
+                            <div class="form-group mt-3">
+                                <label for="">Foto</label>
+                                <input type="file" class="form-control @error("foto") is-invalid @enderror" required value="{{old("foto")}}" name="foto" id="foto" placeholder="">
+                                @error("foto")
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <!-- Foto End -->
+
                             <button type="submit" class="btn btn-primary mt-3 btn-md">Simpan</button>
                             @if(!empty($request->get('id')))
                             <a href="{{ route('admin.kategori') }}" class="btn btn-danger mt-3">Kembali</a>
@@ -68,9 +78,7 @@
                                 @forelse($kategori as $r)
                                 <tr>
                                     <td>{{$no}}</td>
-                                    <td class="px-3 py-3">
-                                        <img src="{{asset('storage/'.$r->foto)}}" class="w-3" alt=""></img>
-                                    </td>
+                                    <td><img src="{{url_images('gambar', $r->foto)}}" class="img-fluid w-40 h-40" style="width:40px;"></td>
                                     <td>{{$r->nama_kategori}}</td>
                                     <td>
                                         <a href="{{url("admin/kategori?id=$r->id")}}" class="btn btn-success btn-sm" title="Edit">

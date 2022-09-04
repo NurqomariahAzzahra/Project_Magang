@@ -30,7 +30,7 @@
                                 <img src="{{ url_images('gambar', $r->gambar) }}" class="img-fluid w-100 h-100" style="width:80px;">
                             </div>
                             <div class="down-content">
-                                <!-- <h6>Rp{{number_format($r->harga_jual)}},- </h6> -->
+                                <h6 class="text-produk">Rp. {{number_format($r->harga_jual)}},- </h6>
                                 <a href="{{ url('produk/'.$r->id) }}" class="text-produk">{{ $r->nama_produk }}</a>
                                 <span>Rating</span>
 
