@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +58,42 @@ Route::get('/wilayah', function () {
 });
 
 //Route::get('/', [Controllers\WilayahController::class, 'index'])->name('home.index');
+
+
+
+// Terbaru
+
+//Route Untuk Super Admin
+
+Route::get('kategori', function () {
+    return view('User.halaman_kategori');
+});
+
+Route::get('bangli', function () {
+    return view('user.bangli_kategori');
+});
+
+Route::get('kintamani', function () {
+    return view('user.kintamani_kategori');
+});
+
+Route::get('susut', function () {
+    return view('user.susut_kategori');
+});
+
+Route::get('tembuku', function () {
+    return view('user.tembuku_kategori');
+});
+
+Route::get('popular-product', function () {
+    return view('popular-product');
+});
+
+
+Route::resource('produk', ProdukController::class);
+Route::get('/menu', [MenuController::class, 'index']);
+Route::resource('resto', MenuController::class);
+// Route::get('/resto', [MenuController::class, 'restoran']);
+Route::resource('menu', MenuController::class);
+
+Route::resource('restoran', RestoranController::class);

@@ -1,84 +1,112 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
-    <title>{{ $title ?? 'App Toko' }}</title>
+    <title>{{ $title ?? 'BangliFood' }}</title>
     <!-- Required meta tags -->
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <meta property="og:locale" content="ID_id" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ asset('assets/img/keranjang.png') }}">
 
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <!--
+TemplateMo 571 Hexashop
+https://templatemo.com/tm-571-hexashop
+-->
 
-
-    <!-- Bootstrap CSS -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/keranjang.png') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="{{ asset('assets/css/main.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Hexa CSS -->
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
 </head>
 
+<meta name="csrf-token" content="{{ 
+
+csrf_token() }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="" name="description">
+<meta content="" name="keywords">
+<meta property="og:locale" content="ID_id" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ asset('assets/img/keranjang.png') }}">
+
+<meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+<!-- Bootstrap CSS -->
+<link rel="shortcut icon" href="{{ asset('assets/img/keranjang.png') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="{{ asset('assets/css/main.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Hexa CSS -->
+<!-- Additional CSS Files -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+<link rel="stylesheet" href="assets/css/owl-carousel.css">
+<link rel="stylesheet" href="assets/css/lightbox.css">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+<title>Kategori Wilayah</title>
+
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+<link rel="stylesheet" href="assets/css/owl-carousel.css">
+<link rel="stylesheet" href="assets/css/lightbox.css">
+
+
 <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-md navbar-custom shadow-sm py-3 fixed-top">
+
+    <!-- ***** Header Area End ***** -->
+    <header class="header-area header-sticky">
         <div class="container">
-            <a href="/" class="logo">
-                <img src="assets/images/white-logo.jpg" style="width:150px;">
-            </a>
-            <a class="navbar-brand" href="{{ url('/') }}"><b></b></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon text-dark pt-2"><i class="fas fa-bars"></i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('/') }}"><b>Home</b></a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href=""><b>Categori wilayah</b></a>
-                    </li> -->
-                    @foreach($kategori as $r)
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('kategori/'.$r->id) }}">
-                            <b>
-                                {{ $r->nama_kategori }}
-                            </b>
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                            <img src="assets/images/white-logo.jpg" style="width:150px;">
                         </a>
-                    </li>
-                    @endforeach
-                    <li class="nav-item">
-                        @if(isset(auth()->user()->name))
-                        <a class="nav-link active bg-primary text-white" href="{{ url('admin') }}"><b>Dashboard</b></a>
-                        @else
-                        <a class="nav-link active" href="{{ url('login') }}">Login</a>
-                        @endif
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#ModalSearch" tabindex="-1" aria-disabled="true">
-                            <i class="fas fa-search"></i>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{{ url('/') }}">Home</a></li>
+                            <li class="scroll-to-section"><a href="kategori">Kategori Wilayah</a></li>
+                            <li class="scroll-to-section">
+                                @if(isset(auth()->user()->name))
+                                <a class="scroll-to-section" href="{{ url('admin') }}"><b>Halaman Admin</b></a>
+                                @else
+                                <a class="scroll-to-section" href="{{ url('login') }}">Login</a>
+                                @endif
+                            </li>
+
+
+                            <li class="scroll-to-section">
+                                <a class="scroll-to-section" href="#" data-bs-toggle="modal" data-bs-target="#ModalSearch" tabindex="-2" aria-disabled="true">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
                         </a>
-                    </li>
-                </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
             </div>
         </div>
-    </nav>
-    <!-- end navbar -->
-    <!-- main -->
+    </header>
+    <!-- End Header -->
+
+
     @php
     $profil = App\Models\User::where('id', 1)->first();
     @endphp
@@ -87,7 +115,7 @@
         @yield('content')
     </div>
     <!-- end main -->
-    <!-- footer -->
+
     <!-- footer -->
     <div class="footer">
         <div class="container">
@@ -122,6 +150,45 @@
         </div>
     </div>
     <!-- end footer -->
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function() {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function() {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+            });
+        });
+    </script>
+
+
     <!-- modal cari -->
     <div class="modal fade" id="ModalSearch" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
         <div class="modal-dialog">

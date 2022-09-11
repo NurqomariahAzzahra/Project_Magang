@@ -1,50 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
+
 <head>
+    <title>{{ $title ?? 'App Toko' }}</title>
+    <!-- Required meta tags -->
+    <!-- CSRF Token -->
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <title>wilayah</title>
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-
-    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
-
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
-
-    <link rel="stylesheet" href="assets/css/lightbox.css">
     <!--
-
 TemplateMo 571 Hexashop
-
 https://templatemo.com/tm-571-hexashop
-
 -->
+
 </head>
+
+<meta name="csrf-token" content="{{ 
+
+csrf_token() }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="" name="description">
+<meta content="" name="keywords">
+<meta property="og:locale" content="ID_id" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ asset('assets/img/keranjang.png') }}">
+
+<meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+<!-- Bootstrap CSS -->
+<link rel="shortcut icon" href="{{ asset('assets/img/keranjang.png') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="{{ asset('assets/css/main.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Hexa CSS -->
+<!-- Additional CSS Files -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+<link rel="stylesheet" href="assets/css/owl-carousel.css">
+<link rel="stylesheet" href="assets/css/lightbox.css">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+<title>Kategori Wilayah</title>
+
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+<link rel="stylesheet" href="assets/css/owl-carousel.css">
+<link rel="stylesheet" href="assets/css/lightbox.css">
+
 
 <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
-
-
-    <!-- ***** Header Area Start ***** -->
+    <!-- ** Header Area Start ** -->
 
     <!-- aku cuman nambah di header -->
     <header class="header-area header-sticky">
@@ -54,20 +72,29 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="assets/images/white-logo.jpg">
+                            <img src="assets/images/white-logo.jpg" style="width:150px;">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="/">Home</a></li>
-                            <li class="scroll-to-section"><a href="halamanmenu">Kategori Wilayah</a></li>
-                            <li class="submenu">
-                                <a href="javascript:;">Login</a>
-                                <ul>
-                                    <li class="scroll-to-section"><a href="{{ route('login') }}">Login</a></li>
-                                    <li class="scroll-to-section"><a href="{{ route('register') }}">Register</a></li>
-                                </ul>
+                            <li class="scroll-to-section"><a href="{{ url('/') }}">Home</a></li>
+                            <li class="scroll-to-section"><a href="kategori">Kategori Wilayah</a></li>
+                            <li class="scroll-to-section">
+                                @if(isset(auth()->user()->name))
+                                <a class="scroll-to-section" href="{{ url('admin') }}"><b>Halaman Admin</b></a>
+                                @else
+                                <a class="scroll-to-section" href="{{ url('login') }}">Login</a>
+                                @endif
                             </li>
+
+
+                            <li class="scroll-to-section">
+                                <a class="scroll-to-section" href="#" data-bs-toggle="modal" data-bs-target="#ModalSearch" tabindex="-2" aria-disabled="true">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </li>
+                        </ul>
+
 
                         </ul>
                         <a class='menu-trigger'>
@@ -79,32 +106,32 @@ https://templatemo.com/tm-571-hexashop
             </div>
         </div>
     </header>
-    <!-- sampek sini ya -->
-    <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading-4 about-page-heading-4" id="top">
+    <!-- ** Header Area End ** -->
+
+    <!-- ** Main Banner Area Start ** -->
+    <div class="page-heading about-page-heading3" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
                         <h2>S U S U T</h2>
-                        <span>Kecamatan Susut merupakan salah satu kecamatan dari empat kecamatan yang terdapat di Kabupaten Bangli,</span>
+                        <span>Susut adalah sebuah kecamatan di Kabupaten Bangli, Provinsi Bali, Indonesia.</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ***** Main Banner Area End ***** -->
+    <!-- ** Main Banner Area End ** -->
 
 
-    <!-- ***** Products Area Starts ***** -->
+    <!-- ** Products Area Starts ** -->
     <section class="section" id="products">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>tempat makan</h2>
+                        <h2>Tempat Makan</h2>
                         <span>Check out all of our tempat makan.</span>
                     </div>
                 </div>
@@ -118,22 +145,28 @@ https://templatemo.com/tm-571-hexashop
                             <div class="hover-content">
                                 <ul>
                                     <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+
                                 </ul>
                             </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
+                            <img src="assets/images/wr. makan vegetarian.png" alt="">
                         </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$120.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
+                        <div class="down-content text-center">
+                            <h4>Wr. Makan Vegetarian</h4>
+
+                            <div class="rating-css">
+                                <div class="star-icon">
+                                    <input type="radio" value="1" name="product_rating" checked id="rating1">
+                                    <label for="rating1" class="fa fa-star"></label>
+                                    <input type="radio" value="2" name="product_rating" id="rating2">
+                                    <label for="rating2" class="fa fa-star"></label>
+                                    <input type="radio" value="3" name="product_rating" id="rating3">
+                                    <label for="rating3" class="fa fa-star"></label>
+                                    <input type="radio" value="4" name="product_rating" id="rating4">
+                                    <label for="rating4" class="fa fa-star"></label>
+                                    <input type="radio" value="5" name="product_rating" id="rating5">
+                                    <label for="rating5" class="fa fa-star"></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,22 +176,28 @@ https://templatemo.com/tm-571-hexashop
                             <div class="hover-content">
                                 <ul>
                                     <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+
                                 </ul>
                             </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
+                            <img src="assets/images/babi guling juwita.png" alt="">
                         </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$90.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
+                        <div class="down-content text-center">
+                            <h4>Wr. Babi Guling Juwita</h4>
+
+                            <div class="rating-css">
+                                <div class="star-icon">
+                                    <input type="radio" value="1" name="product_rating" checked id="rating1">
+                                    <label for="rating1" class="fa fa-star"></label>
+                                    <input type="radio" value="2" name="product_rating" id="rating2">
+                                    <label for="rating2" class="fa fa-star"></label>
+                                    <input type="radio" value="3" name="product_rating" id="rating3">
+                                    <label for="rating3" class="fa fa-star"></label>
+                                    <input type="radio" value="4" name="product_rating" id="rating4">
+                                    <label for="rating4" class="fa fa-star"></label>
+                                    <input type="radio" value="5" name="product_rating" id="rating5">
+                                    <label for="rating5" class="fa fa-star"></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,22 +207,28 @@ https://templatemo.com/tm-571-hexashop
                             <div class="hover-content">
                                 <ul>
                                     <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+
                                 </ul>
                             </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
+                            <img src="assets/images/jfc susut.png" alt="">
                         </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$150.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
+                        <div class="down-content text-center">
+                            <h4>JFC Susut</h4>
+
+                            <div class="rating-css">
+                                <div class="star-icon">
+                                    <input type="radio" value="1" name="product_rating" checked id="rating1">
+                                    <label for="rating1" class="fa fa-star"></label>
+                                    <input type="radio" value="2" name="product_rating" id="rating2">
+                                    <label for="rating2" class="fa fa-star"></label>
+                                    <input type="radio" value="3" name="product_rating" id="rating3">
+                                    <label for="rating3" class="fa fa-star"></label>
+                                    <input type="radio" value="4" name="product_rating" id="rating4">
+                                    <label for="rating4" class="fa fa-star"></label>
+                                    <input type="radio" value="5" name="product_rating" id="rating5">
+                                    <label for="rating5" class="fa fa-star"></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -193,237 +238,93 @@ https://templatemo.com/tm-571-hexashop
                             <div class="hover-content">
                                 <ul>
                                     <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+
                                 </ul>
                             </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
+                            <img src="assets/images/nukad tampaksiring.jpg" alt="">
                         </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$75.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                        <div class="down-content text-center">
+                            <h4>Nukad Tampaksiring Susut</h4>
+
+                            <div class="rating-css">
+                                <div class="star-icon">
+                                    <input type="radio" value="1" name="product_rating" checked id="rating1">
+                                    <label for="rating1" class="fa fa-star"></label>
+                                    <input type="radio" value="2" name="product_rating" id="rating2">
+                                    <label for="rating2" class="fa fa-star"></label>
+                                    <input type="radio" value="3" name="product_rating" id="rating3">
+                                    <label for="rating3" class="fa fa-star"></label>
+                                    <input type="radio" value="4" name="product_rating" id="rating4">
+                                    <label for="rating4" class="fa fa-star"></label>
+                                    <input type="radio" value="5" name="product_rating" id="rating5">
+                                    <label for="rating5" class="fa fa-star"></label>
+                                </div>
                             </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
                         </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$45.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$130.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$80.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$12.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/Warung-Makan03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Seafood Resto</h4>
-                            <!-- <span>$30.00</span> -->
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="pagination">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-12">
+                <div class="pagination">
+                    <ul>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
-    <!-- ***** Products Area Ends ***** -->
+    <!-- ** Products Area Ends ** -->
 
-    <!-- ***** Footer Start ***** -->
-    <footer>
+    <!-- Footer Area -->
+    <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="first-item">
-                        <!-- <div class="logo">
-                            <img src="assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
-                        </div> -->
-                        <ul>
-                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
-                            <li><a href="#">hexashop@company.com</a></li>
-                            <li><a href="#">010-020-0340</a></li>
-                        </ul>
-                    </div>
+                <div class="col-sm-8">
+                    <h4>Kontak Kami</h4>
+                    <!-- <p class="pt-2">08:00 - 17:00 WIB / (Senin - Jumat)</p> -->
+                    <i class="fas fa-envelope-square me-2"></i> diskominfosan@banglikab.go.id
+                    <br>
+                    <i class="fas fa-phone-square me-2"></i> (0366) 93804
+                    <br>
+                    <i class="fas fa-map-marker-alt me-2"></i> Jalan Brigjen Ngurah Rai No. 30
+                    <br><br>
                 </div>
-                <div class="col-lg-3">
-                    <h4>Shopping &amp; Categories</h4>
-                    <ul>
-                        <li><a href="#">Men’s Shopping</a></li>
-                        <li><a href="#">Women’s Shopping</a></li>
-                        <li><a href="#">Kid's Shopping</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h4>Help &amp; Information</h4>
-                    <ul>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Tracking ID</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-12">
-                    <div class="under-footer">
-                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
-
-                            <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
-
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank" title="free & premium responsive templates">ThemeWagon</a></p>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
+                <div class="col-sm-4">
+                    <h4>Tetap Terhubung Dengan Kami</h4>
+                    <a href="#" class="text-terhubung"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-terhubung"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-terhubung"><i class="fab fa-news"></i></a>
+                    <a href="#" class="text-terhubung"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-terhubung"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-terhubung"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
-    </footer>
-
+    </div>
+    <div class="copyright">
+        <div class="container text-center">
+            Copyright &copy; <?= date('Y'); ?> {{ config('app.name') }} All Reserved
+            <br>
+            Bangli's Food
+        </div>
+    </div>
+    <!-- end footer -->
 
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
@@ -458,11 +359,12 @@ https://templatemo.com/tm-571-hexashop
                     $("." + selectedClass).fadeIn();
                     $("#portfolio").fadeTo(50, 1);
                 }, 500);
-
             });
         });
     </script>
-
+    </div>
+    </div>
+    </div>
 </body>
 
 </html>

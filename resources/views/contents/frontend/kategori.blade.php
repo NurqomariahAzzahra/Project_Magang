@@ -15,7 +15,7 @@
         <div class="col-sm-9 mx-auto">
             <!--product -->
             <div class="product">
-                <h1 class="mb-4"><b>{{ $title }}</b></h1>
+                
                 @forelse($kategori as $r)
                 <div class="thumb">
                     <div class="hover-effect">

@@ -28,6 +28,7 @@ class HomeController extends Controller
         return view('contents.frontend.home', $data);
     }
 
+
     public function kategori(Request $request, $id)
     {
         $edit = Kategori::findOrFail($id);
